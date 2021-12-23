@@ -6,7 +6,7 @@
 /*   By: hhamdy <hhamdy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/21 09:53:49 by hhamdy            #+#    #+#             */
-/*   Updated: 2021/12/22 10:15:08 by hhamdy           ###   ########.fr       */
+/*   Updated: 2021/12/23 08:01:07 by hhamdy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ void	swap(int *num1, int *num2)
 	*num2 = swp;
 }
 
-int	*buble_sort(t_list *list, int n) 
+int	*buble_sort(t_list *list, int n)
 {
 	int		*tab;
 	int		i;

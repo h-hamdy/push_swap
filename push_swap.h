@@ -6,7 +6,7 @@
 /*   By: hhamdy <hhamdy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/16 09:57:38 by hhamdy            #+#    #+#             */
-/*   Updated: 2021/12/21 17:37:21 by hhamdy           ###   ########.fr       */
+/*   Updated: 2021/12/23 08:38:54 by hhamdy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ int			do_rev_rotate(t_list *stack_a, t_list *stack_b, char *str);
 
 /*_________________SORTING_ACTION____________________*/
 int			*buble_sort(t_list *list, int ac);
+//void		sort_small_stack(*stack_a);
 
 /*____________________PUSH_SWAP__________________*/
 t_list		**push_swap(int n, char **stack);

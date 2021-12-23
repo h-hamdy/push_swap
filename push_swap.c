@@ -6,7 +6,7 @@
 /*   By: hhamdy <hhamdy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/15 11:24:37 by hhamdy            #+#    #+#             */
-/*   Updated: 2021/12/22 12:03:10 by hhamdy           ###   ########.fr       */
+/*   Updated: 2021/12/23 08:35:24 by hhamdy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,12 +77,10 @@ int	main(int ac, char **av)
 	stack_a = ft_set_stack(ac - 1, av);   // set-up liked_list
 	if (is_sorted(stack_a) == 1)
 		exit(0);
+	// if (ft_lstsize(stack_a) <= 5)
+	// 	sort_small_stack(stack_a, stack_b);
 	sort_stack = buble_sort(stack_a, ac - 1);   // sort numbers in array
 	get_index(&stack_a, sort_stack);
-	while (stack_a)
-	{
-		printf("%d\n", stack_a->content);
-		stack_a = stack_a->next;
-	}
+	
 }
 
