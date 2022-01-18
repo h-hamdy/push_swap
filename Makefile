@@ -23,6 +23,7 @@ SRCS 	=  	push_swap.c	\
 			operation.c \
 			ft_sort.c \
 			do_instraction.c \
+			sort_small_stack.c \
 
 OBJS	= $(SRCS:.c=.o)
 	

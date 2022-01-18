@@ -27,13 +27,13 @@ void		ft_rev_rotate(t_list **head);
 
 /*_________________DO_INSTRACTION_____________________*/
 int			do_swap(t_list *stack_a, t_list *stack_b, char *str);
-int			do_push(t_list *stack_a, t_list *stack_b, char *str);
-int			do_rotate(t_list *stack_a, t_list *stack_b, char *str);
-int			do_rev_rotate(t_list *stack_a, t_list *stack_b, char *str);
+int			do_push(t_list **stack_a, t_list **stack_b, char *str);
+int			do_rotate(t_list **stack_a, t_list **stack_b, char *str);
+int			do_rev_rotate(t_list **stack_a, t_list **stack_b, char *str);
 
 /*_________________SORTING_ACTION____________________*/
 int			*buble_sort(t_list *list, int ac);
-//void		sort_small_stack(*stack_a);
+void		sort_small_stack(t_list **stack_a, t_list **stack_b);
 
 /*____________________PUSH_SWAP__________________*/
 t_list		**push_swap(int n, char **stack);

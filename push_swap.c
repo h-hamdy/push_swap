@@ -25,10 +25,7 @@ t_list	*ft_set_stack(int ac, char **av)   // set-up the args in linked list
 	{
 		buff = ft_lstnew(ft_atoi(av[i]));
 		if (!buff)
-		{
-			free(&buff);
 			exit (1);
-		}
 		ft_lstadd_back(&stack, buff);
 		i++;
 	}
@@ -68,7 +65,7 @@ int	main(int ac, char **av)
 {
 	t_list	*stack_a;
 	t_list	*stack_b;
-	int		*sort_stack;
+	//int		*sort_stack;
 
 	stack_b = NULL;
 	if (ac <= 2)
@@ -77,10 +74,10 @@ int	main(int ac, char **av)
 	stack_a = ft_set_stack(ac - 1, av);   // set-up liked_list
 	if (is_sorted(stack_a) == 1)
 		exit(0);
-	// if (ft_lstsize(stack_a) <= 5)
-	// 	sort_small_stack(stack_a, stack_b);
-	sort_stack = buble_sort(stack_a, ac - 1);   // sort numbers in array
-	get_index(&stack_a, sort_stack);
-	
+	if (ft_lstsize(stack_a) <= 5)
+		sort_small_stack(&stack_a, &stack_b);
+	//ft_rotate(&stack_a);
+	// sort_stack = buble_sort(stack_a, ac - 1);  // sort numbers in array
+	// get_index(&stack_a, sort_stack);
 }
 

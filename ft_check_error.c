@@ -37,7 +37,6 @@ static int	ft_check_double(int n, char **av)
 void	ft_check_error(int count, char **str)
 {
 	int	i;
-	int	j;
 
 	i = 1;
 	if (!ft_check_double(count, str))
@@ -47,7 +46,6 @@ void	ft_check_error(int count, char **str)
 	}
 	while (i < count)
 	{
-		j = 0;
 		if (ft_atoi(str[i]) > INT_MAX || ft_atoi(str[i]) < INT_MIN)
 		{
 			write (2, "Error\n", 6);

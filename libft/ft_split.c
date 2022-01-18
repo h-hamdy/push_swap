@@ -96,13 +96,11 @@ static char	**ft_fill_str(char **str, char const *s, char c)
 
 char	**ft_split(char const *s, char c)
 {
-	int		i;
 	int		count;
 	char	**str;
 
 	if (!s)
 		return (0);
-	i = 0;
 	count = ft_count_word(s, c);
 	str = (char **)malloc(sizeof(char *) * (count + 1));
 	if (!str)
