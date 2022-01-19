@@ -134,10 +134,10 @@ void	sort_small_stack(t_list **stack_a, t_list **stack_b)
 		sort_four(stack_a, stack_b);
 		do_push(stack_a, stack_b, "pa");
 	}
-	printf("-----LINKED LIST SORTED---------------\n");
-	while (*stack_a)
-	{
-		printf("%d\n", (*stack_a)->content);
-		(*stack_a) = (*stack_a)->next;
-	}
+	// printf("-----LINKED LIST SORTED---------------\n");
+	// while (*stack_a)
+	// {
+	// 	printf("%d\n", (*stack_a)->content);
+	// 	(*stack_a) = (*stack_a)->next;
+	// }
 }
