@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: hhamdy <hhamdy@student.42.fr>              +#+  +:+       +#+         #
+#    By: jesse <jesse@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/15 10:57:28 by hhamdy            #+#    #+#              #
-#    Updated: 2021/12/21 16:46:58 by hhamdy           ###   ########.fr        #
+#    Updated: 2022/01/22 17:10:37 by jesse            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,6 +24,8 @@ SRCS 	=  	push_swap.c	\
 			ft_sort.c \
 			do_instraction.c \
 			sort_small_stack.c \
+			sort_big_stack.c \
+			ft_utils.c \
 
 OBJS	= $(SRCS:.c=.o)
 	

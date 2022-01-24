@@ -3,16 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hhamdy <hhamdy@student.42.fr>              +#+  +:+       +#+        */
+/*   By: jesse <jesse@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/15 11:24:37 by hhamdy            #+#    #+#             */
-/*   Updated: 2021/12/23 08:35:24 by hhamdy           ###   ########.fr       */
+/*   Updated: 2022/01/24 19:05:54 by jesse            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_list	*ft_set_stack(int ac, char **av)   // set-up the args in linked list
+// set-up the args in linked list
+t_list	*ft_set_stack(int ac, char **av)
 {
 	t_list	*stack;
 	t_list	*buff;
@@ -32,21 +33,11 @@ t_list	*ft_set_stack(int ac, char **av)   // set-up the args in linked list
 	return (stack);
 }
 
-int		is_sorted(t_list *stack_a)   // check if stack is already sorted !!!
-{
-	while (stack_a->next)
-	{
-		if (stack_a->content > stack_a->next->content)
-			return (0);
-		stack_a = stack_a->next;
-	}
-	return (1);
-}
-
+// Convert the stack_a to a index from the sorted array
 void	get_index(t_list **stack_a, int *tab)
 {
-	int i;
-	t_list *tmp;
+	int		i;
+	t_list	*tmp;
 
 	tmp = *stack_a;
 	while ((*stack_a))
@@ -65,19 +56,18 @@ int	main(int ac, char **av)
 {
 	t_list	*stack_a;
 	t_list	*stack_b;
-	//int		*sort_stack;
+	int		*sort_stack;
 
 	stack_b = NULL;
 	if (ac <= 2)
 		return (0);
-	ft_check_error(ac, av);   // error handling
-	stack_a = ft_set_stack(ac - 1, av);   // set-up liked_list
+	ft_check_error(ac, av);
+	stack_a = ft_set_stack(ac - 1, av);
 	if (is_sorted(stack_a) == 1)
 		exit(0);
 	if (ft_lstsize(stack_a) <= 5)
 		sort_small_stack(&stack_a, &stack_b);
-	//ft_rotate(&stack_a);
-	// sort_stack = buble_sort(stack_a, ac - 1);  // sort numbers in array
-	// get_index(&stack_a, sort_stack);
+	sort_stack = buble_sort(stack_a, ac - 1);
+	get_index(&stack_a, sort_stack);
+	sort_big_stack(&stack_a, &stack_b);
 }
-

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hhamdy <hhamdy@student.42.fr>              +#+  +:+       +#+        */
+/*   By: jesse <jesse@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/16 09:57:38 by hhamdy            #+#    #+#             */
-/*   Updated: 2021/12/23 08:38:54 by hhamdy           ###   ########.fr       */
+/*   Updated: 2022/01/24 19:04:33 by jesse            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,9 @@ int			do_rev_rotate(t_list **stack_a, t_list **stack_b, char *str);
 /*_________________SORTING_ACTION____________________*/
 int			*buble_sort(t_list *list, int ac);
 void		sort_small_stack(t_list **stack_a, t_list **stack_b);
+void		sort_big_stack(t_list **stack_a, t_list **stack_b);
+int			is_sorted(t_list *stack_a);
+int			get_min(t_list **stack_a);
 
 /*____________________PUSH_SWAP__________________*/
 t_list		**push_swap(int n, char **stack);
