@@ -6,7 +6,7 @@
 /*   By: jesse <jesse@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/27 09:25:42 by jesse             #+#    #+#             */
-/*   Updated: 2022/01/28 13:09:12 by jesse            ###   ########.fr       */
+/*   Updated: 2022/01/28 13:58:27 by jesse            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,7 +82,7 @@ void	check_instraction(t_list **stack_a, t_list **stack_b)
 		free(line);
 		line = get_next_line(0);
 	}
-	if (is_sorted(*stack_a))
+	if (is_sorted(*stack_a) && !(*stack_b))
 		write (1, "OK\n", 3);
 	else
 		write (1, "KO\n", 3);
