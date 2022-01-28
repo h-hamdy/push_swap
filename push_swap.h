@@ -6,7 +6,7 @@
 /*   By: jesse <jesse@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/16 09:57:38 by hhamdy            #+#    #+#             */
-/*   Updated: 2022/01/24 19:04:33 by jesse            ###   ########.fr       */
+/*   Updated: 2022/01/27 23:43:40 by jesse            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,11 +34,21 @@ int			do_rev_rotate(t_list **stack_a, t_list **stack_b, char *str);
 /*_________________SORTING_ACTION____________________*/
 int			*buble_sort(t_list *list, int ac);
 void		sort_small_stack(t_list **stack_a, t_list **stack_b);
-void		sort_big_stack(t_list **stack_a, t_list **stack_b);
+t_list		*ft_set_stack(int ac, char **av);
 int			is_sorted(t_list *stack_a);
 int			get_min(t_list **stack_a);
+int			get_count(t_list **stack_a);
 
-/*____________________PUSH_SWAP__________________*/
-t_list		**push_swap(int n, char **stack);
+/*__________________BONUS-PART_______________________*/
+
+# define BUFFER_SIZE 1024
+
+char		*get_next_line(int fd);
+size_t		ft_strlen(const char *str);
+char		*ft_strjoin(char const *s1, char const *s2);
+char		*ft_strchr(const char *s, int c);
+char		*ft_substr(char const *s, unsigned int start, size_t len);
+char		*ft_strdup(const char *s1);
+void		check_instraction(t_list **stack_a, t_list **stack_b);
 
 #endif

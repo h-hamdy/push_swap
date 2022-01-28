@@ -6,31 +6,40 @@
 /*   By: jesse <jesse@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/15 11:24:37 by hhamdy            #+#    #+#             */
-/*   Updated: 2022/01/24 19:05:54 by jesse            ###   ########.fr       */
+/*   Updated: 2022/01/27 17:11:00 by jesse            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-// set-up the args in linked list
-t_list	*ft_set_stack(int ac, char **av)
+// sort numbers greater than 5
+void	sort_big_stack(t_list **stack_a, t_list **stack_b)
 {
-	t_list	*stack;
-	t_list	*buff;
-	int		i;
+	int	index;
+	int	i;
+	int	len_stack;
 
-	i = 1;
-	stack = NULL;
-	buff = NULL;
-	while (i <= ac)
+	index = 0;
+	len_stack = ft_lstsize(*stack_a);
+	while (!is_sorted(*stack_a))
 	{
-		buff = ft_lstnew(ft_atoi(av[i]));
-		if (!buff)
-			exit (1);
-		ft_lstadd_back(&stack, buff);
-		i++;
+		i = 0;
+		while (i < len_stack)
+		{
+			if ((((*stack_a)->content >> index) & 1) == 0)
+			{
+				do_push(stack_a, stack_b, "pb");
+			}
+			else if ((((*stack_a)->content >> index) & 1) == 1)
+			{
+				do_rotate(stack_a, stack_b, "ra");
+			}
+			i++;
+		}
+		while (*stack_b)
+			do_push(stack_a, stack_b, "pa");
+		index++;
 	}
-	return (stack);
 }
 
 // Convert the stack_a to a index from the sorted array

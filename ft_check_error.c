@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_check_error.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hhamdy <hhamdy@student.42.fr>              +#+  +:+       +#+        */
+/*   By: jesse <jesse@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/16 09:53:12 by hhamdy            #+#    #+#             */
-/*   Updated: 2021/12/20 11:23:30 by hhamdy           ###   ########.fr       */
+/*   Updated: 2022/01/27 17:10:22 by jesse            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ void	ft_check_error(int count, char **str)
 	}
 	while (i < count)
 	{
-		if (ft_atoi(str[i]) > INT_MAX || ft_atoi(str[i]) < INT_MIN)
+		if (ft_atoi(str[i]) > INT_MAX)
 		{
 			write (2, "Error\n", 6);
 			exit (1);

@@ -6,7 +6,7 @@
 /*   By: jesse <jesse@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/23 08:01:31 by hhamdy            #+#    #+#             */
-/*   Updated: 2022/01/24 19:09:58 by jesse            ###   ########.fr       */
+/*   Updated: 2022/01/25 00:56:27 by jesse            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,31 +26,8 @@ void	sort_tree(t_list **stack_a, t_list **stack_b)
 }
 
 // get the position of the min number in stack a
-int	get_count(t_list **stack_a)
+void	sort_position(t_list **stack_a, t_list **stack_b, int count)
 {
-	t_list	*tmp;
-	int		min;
-	int		count;
-
-	count = 0;
-	tmp = *stack_a;
-	min = get_min(stack_a);
-	while (tmp)
-	{
-		if (tmp->content == min)
-			break ;
-		tmp = tmp->next;
-		count++;
-	}
-	return (count);
-}
-
-// sort 4 number
-void	sort_four(t_list **stack_a, t_list **stack_b)
-{
-	int	count;
-
-	count = get_count(stack_a);
 	if (count == 0)
 		do_push(stack_a, stack_b, "pb");
 	if (count == 1)
@@ -64,6 +41,16 @@ void	sort_four(t_list **stack_a, t_list **stack_b)
 		do_rotate(stack_a, stack_b, "ra");
 		do_push(stack_a, stack_b, "pb");
 	}
+}
+
+// sort 4 number
+void	sort_four(t_list **stack_a, t_list **stack_b)
+{
+	int	count;
+
+	count = get_count(stack_a);
+	if (count == 0 || count == 1 || count == 2)
+		sort_position(stack_a, stack_b, count);
 	if (count == 3)
 	{
 		do_rev_rotate(stack_a, stack_b, "rra");
@@ -79,19 +66,8 @@ void	sort_five(t_list **stack_a, t_list **stack_b)
 	int	count;
 
 	count = get_count(stack_a);
-	if (count == 0)
-		do_push(stack_a, stack_b, "pb");
-	if (count == 1)
-	{
-		do_swap(*stack_a, *stack_b, "sa");
-		do_push(stack_a, stack_b, "pb");
-	}
-	if (count == 2)
-	{
-		do_rotate(stack_a, stack_b, "ra");
-		do_rotate(stack_a, stack_b, "ra");
-		do_push(stack_a, stack_b, "pb");
-	}
+	if (count == 0 || count == 1 || count == 2)
+		sort_position(stack_a, stack_b, count);
 	if (count == 3)
 	{
 		do_rev_rotate(stack_a, stack_b, "rra");
@@ -99,8 +75,10 @@ void	sort_five(t_list **stack_a, t_list **stack_b)
 		do_push(stack_a, stack_b, "pb");
 	}
 	if (count == 4)
+	{
 		do_rev_rotate(stack_a, stack_b, "rra");
-	do_push(stack_a, stack_b, "pb");
+		do_push(stack_a, stack_b, "pb");
+	}
 }
 
 void	sort_small_stack(t_list **stack_a, t_list **stack_b)
