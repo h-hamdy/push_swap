@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   checker.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jesse <jesse@student.42.fr>                +#+  +:+       +#+        */
+/*   By: hhamdy <hhamdy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/27 09:42:36 by jesse             #+#    #+#             */
-/*   Updated: 2022/01/28 12:58:19 by jesse            ###   ########.fr       */
+/*   Created: 2022/02/08 11:31:14 by hhamdy            #+#    #+#             */
+/*   Updated: 2022/02/08 11:31:37 by hhamdy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,10 +23,5 @@ int	main(int ac, char **av)
 	ft_check_error(ac, av);
 	stack_a = ft_set_stack(ac - 1, av);
 	check_instraction(&stack_a, &stack_b);
-	while (stack_a)
-	{
-		printf("stack a = %d\n", stack_a->content);
-		stack_a = stack_a->next;
-	}
 	return (0);
 }

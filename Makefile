@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: jesse <jesse@student.42.fr>                +#+  +:+       +#+         #
+#    By: hhamdy <hhamdy@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/15 10:57:28 by hhamdy            #+#    #+#              #
-#    Updated: 2022/01/27 10:47:50 by jesse            ###   ########.fr        #
+#    Updated: 2022/02/08 10:44:46 by hhamdy           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -49,7 +49,7 @@ $(NAME):	$(LIBFT) $(OBJS)
 
 bonus: $(CHECKER)
 
-$(CHECKER):   $(B_OBJS) $(LIBFT)
+$(CHECKER):   $(LIBFT) $(B_OBJS)
 	$(CC) $(CFLAGS) $(B_OBJS) -o $(CHECKER) $(LIBFT)
 
 $(LIBFT):
