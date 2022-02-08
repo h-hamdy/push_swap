@@ -6,13 +6,12 @@
 /*   By: hhamdy <hhamdy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/08 11:32:31 by hhamdy            #+#    #+#             */
-/*   Updated: 2022/02/08 11:32:34 by hhamdy           ###   ########.fr       */
+/*   Updated: 2022/02/08 11:39:32 by hhamdy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-// sort numbers greater than 5
 void	sort_big_stack(t_list **stack_a, t_list **stack_b)
 {
 	int	index;
